@@ -1,0 +1,93 @@
+{
+    "files.defaultLanguage": "c", // ctrl+N新建檔案後預設的語言
+    "editor.formatOnType": true,  // 輸入分號(C/C++的語句結束標識)後自動格式化當前這一行的程式碼
+    "editor.suggest.snippetsPreventQuickSuggestions": false, // clangd的snippets有很多的跳轉點，不用這個就必須手動觸發Intellisense了
+    "editor.acceptSuggestionOnEnter": "off", // 我個人的習慣，按回車時一定是真正的換行，只有tab才會接受Intellisense
+    // "editor.snippetSuggestions": "top", // （可選）snippets顯示在補全列表頂端，預設是inline
+
+    "code-runner.runInTerminal": true, // 設定成false會在「輸出」中輸出，無法輸入
+    "code-runner.executorMap": {
+        "c": "gcc '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -lm -static-libgcc -std=c11 -fexec-charset=GBK && &'./$fileNameWithoutExt.exe'",
+        "cpp": "g++ '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -static-libgcc -std=c++14 -fexec-charset=GBK && &'./$fileNameWithoutExt.exe'"
+        // "c": "gcc $fileName -o $fileNameWithoutExt.exe -Wall -O2 -m64 -lm -static-libgcc -std=c11 -fexec-charset=GBK && $dir$fileNameWithoutExt.exe",
+        // "cpp": "g++ $fileName -o $fileNameWithoutExt.exe -Wall -O2 -m64 -static-libgcc -std=c++14 -fexec-charset=GBK && $dir$fileNameWithoutExt.exe"
+    }, // 右鍵run code時執行的命令；未註釋的僅適用於PowerShell（Win10預設）和pwsh，檔名中有空格也可以編譯執行；註釋掉的適用於cmd（win7預設）、PS和bash，但檔名中有空格時無法執行
+    "code-runner.saveFileBeforeRun": true, // run code前儲存
+    "code-runner.preserveFocus": true,     // 若為false，run code後遊標會聚焦到終端上。如果需要頻繁輸入資料可設為false
+    "code-runner.clearPreviousOutput": false, // 每次run code前清空屬於code runner的終端訊息，預設false
+    "code-runner.ignoreSelection": true,   // 預設為false，效果是滑鼠選中一塊程式碼後可以單獨執行，但C是編譯型語言，不適合這樣用
+    "code-runner.fileDirectoryAsCwd": true, // 將code runner終端的工作目錄切換到檔案目錄再執行，對依賴cwd的程式產生影響；如果為false，executorMap要加cd $dir
+
+    "C_Cpp.clang_format_sortIncludes": true,
+    "files.associations": {
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "*.tcc": "cpp",
+        "istream": "cpp",
+        "random": "cpp",
+        "sstream": "cpp",
+        "atomic": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "string": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "fstream": "cpp",
+        "iosfwd": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "typeinfo": "cpp",
+        "bitset": "cpp",
+        "cfenv": "cpp",
+        "chrono": "cpp",
+        "cinttypes": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "condition_variable": "cpp",
+        "csetjmp": "cpp",
+        "csignal": "cpp",
+        "cuchar": "cpp",
+        "forward_list": "cpp",
+        "unordered_set": "cpp",
+        "map": "cpp",
+        "ratio": "cpp",
+        "regex": "cpp",
+        "set": "cpp",
+        "future": "cpp",
+        "iomanip": "cpp",
+        "mutex": "cpp",
+        "scoped_allocator": "cpp",
+        "shared_mutex": "cpp",
+        "thread": "cpp",
+        "typeindex": "cpp",
+        "valarray": "cpp"
+    }, // 格式化時調整include的順序（按字母排序）
+}
