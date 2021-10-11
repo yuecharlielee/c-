@@ -89,5 +89,6 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "valarray": "cpp"
-    }, // 格式化時調整include的順序（按字母排序）
+    },
+    "C_Cpp.errorSquiggles": "Enabled", // 格式化時調整include的順序（按字母排序）
 }
