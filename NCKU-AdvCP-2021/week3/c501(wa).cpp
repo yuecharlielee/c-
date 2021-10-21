@@ -9,13 +9,14 @@ int main()
     cin >> t;
     while (t--)
     {
-        vector<int> l, r;
+        vector<pair<int, int>> a;
         cin >> n >> m;
         vector<vector<int>> v(4, vector<int>());
         while (n--)
         {
             cin >> d >> c;
             v[c].push_back(d);
+            a.push_back({d, c});
         }
         bool is_qq = false;
         for (int i = 1; i <= 3; i++)
@@ -32,7 +33,6 @@ int main()
             cout << "QQ\n";
             continue;
         }
-        
     }
     return 0;
 }

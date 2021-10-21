@@ -3,30 +3,29 @@ using namespace std;
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
     int n, mod = 1e9 + 7;
     string s;
-    cin >> n;
-    cin.ignore();
+    scanf("%d", &n);
+    char a = getchar();
+    a = getchar();
     while (n--)
     {
-        string ss = "";
-        getline(cin, s);
         int oc = 0, wc = 0, count = 0;
-        for (int i = 0; i < s.size(); i++)
+        while (a != '\n')
         {
-            if (s[i] == 'O')
+            if (a == 'O')
             {
                 count = (count + wc) % mod;
                 oc++;
             }
-            else if (s[i] == 'w')
+            else if (a == 'w')
             {
                 wc = (oc + wc) % mod;
             }
+            a = getchar();
         }
-        cout << count << "\n";
+        printf("%d\n", count);
+        a = getchar();
     }
     return 0;
 }
