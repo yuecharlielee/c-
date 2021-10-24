@@ -10,25 +10,15 @@ int main()
     while (t--)
     {
         vector<pair<int, int>> a;
+        vector<int> countpair(3);
         cin >> n >> m;
-        vector<vector<int>> v(4, vector<int>());
         while (n--)
         {
             cin >> d >> c;
-            v[c].push_back(d);
+            countpair[c - 1]++;
             a.push_back({d, c});
         }
-        bool is_qq = false;
-        for (int i = 1; i <= 3; i++)
-        {
-            sort(v[i].begin(), v[i].end());
-            if (v[i].size() < m)
-            {
-                is_qq = true;
-                break;
-            }
-        }
-        if (is_qq)
+        if (min(min(countpair[0], countpair[1]), countpair[2]) < m)
         {
             cout << "QQ\n";
             continue;
